@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
-import CrearPregunta from "./components/NewQuestion";
+import CrearPregunta from "./components/NuevasPreguntas";
 
 function App() {
   return (

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Questions from "../components/Questions";
 import Answers from "../components/Answers";
 import HandleQuestions from "../utils/HandleQuestions";
@@ -9,9 +9,9 @@ export default function Landing() {
   const [correct, setCorrect] = useState<boolean | null>(null);
   const [indexQuestion, setIndexQuestion] = useState<number>(0);
   const [isFinished, setIsFinished] = useState<boolean>(true);
+  const [score, setScore] = useState<number>(0);
 
   const { questions } = HandleQuestions();
-  console.log(questions);
 
   const actualQuestion = questions[indexQuestion];
 
@@ -33,11 +33,16 @@ export default function Landing() {
     setAnswered(true);
   };
 
+  const handleScore = () => {
+    setScore(score + 1);
+  };
+
   return (
-    <div className="flex flex-col items-center h-screen w-screen bg-[#222]">
+    <div className="flex flex-col items-center h-screen w-screen bg-[#222] text-white">
       <h1 className="pt-20 flex-1 h-1/3 font-bold text-cyan-500 text-5xl">
         Verdadero o Falso
       </h1>
+      <p>Tu puntuacion actual es: {score}/{questions.length}</p>
       {isFinished ? (
         <div className="h-2/3">
           {answered ? (
@@ -45,6 +50,7 @@ export default function Landing() {
               onClose={handleContestada}
               onResponse={handleRespuesta}
               onQuestion={actualQuestion}
+              handleScore={handleScore}
             />
           ) : (
             <Answers
@@ -56,7 +62,7 @@ export default function Landing() {
           )}
         </div>
       ) : (
-        <Finished/>
+        <Finished finalScore={score} />
       )}
     </div>
   );

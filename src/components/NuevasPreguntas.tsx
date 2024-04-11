@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function NewQuestion() {
+export default function NuevasPreguntas() {
   const navegation = useNavigate();
 
   const UrlBase = "http://localhost:8080/nuevaPregunta";
@@ -36,7 +36,7 @@ export default function NewQuestion() {
   };
 
   return (
-    <div className="bg-[#222] h-screen w-screen text-white">
+    <div className="bg-[#2c2c2c] h-screen w-screen text-white">
       <div className="text-center font-bold text-2xl">
         <h3>Agregar Nueva Pregunta</h3>
       </div>
