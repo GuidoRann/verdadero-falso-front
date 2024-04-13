@@ -40,7 +40,7 @@ export default function Questions({
   };
 
   return (
-    <div className="text-white h-2/3 flex flex-col gap-7 w-screen items-center">
+    <div className="text-white flex flex-col gap-7 w-screen items-center justify-center">
       <div>
         <p className="text-3xl">{onQuestion?.pregunta}</p>
       </div>

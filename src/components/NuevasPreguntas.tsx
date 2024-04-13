@@ -25,7 +25,9 @@ export default function NuevasPreguntas() {
 
   const { pregunta, respuesta, validacion, categoria, urlImagen } = preguntas;
 
-  const onImputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const onImputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ): void => {
     setPreguntas({ ...preguntas, [e.target.name]: e.target.value });
   };
 
@@ -69,17 +71,20 @@ export default function NuevasPreguntas() {
           />
         </div>
         <div className="p-2">
-          <label htmlFor="sueldo" className="p-2">
+          <label htmlFor="validacion" className="p-2">
             Validacion
           </label>
-          <input
-            type="text"
+          <select
             className="text-black"
             id="validacion"
-            name="validacion"
             value={validacion}
+            name="validacion"
             onChange={(e) => onImputChange(e)}
-          />
+          >
+            <option value="">-</option>
+            <option value="V">Verdadero</option>
+            <option value="F">Falso</option>
+          </select>
         </div>
         <div className="p-2">
           <label htmlFor="sueldo" className="p-2">
