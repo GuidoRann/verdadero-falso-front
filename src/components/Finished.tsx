@@ -4,11 +4,11 @@ type finishedProps = {
 
 export default function Finished({ finalScore }: finishedProps) {
   return (
-    <div className="h-2/3">
-      <h1 className="text-5xl text-white">
+    <div className="text-center py-20">
+      <h1 className="text-lg text-white">
         Haz completado todas las preguntas
       </h1>
-      <p className="text-2xl text-white">Tu puntuacion es de {finalScore}</p>
+      <p className="text-white text-lg">Tu puntuacion es de {finalScore}</p>
     </div>
   );
 }

@@ -39,16 +39,16 @@ export default function Landing() {
 
   return (
     <div className="flex flex-col items-center h-screen w-screen bg-[#222] text-white">
-      <div className="h-[250px] pt-10 w-screen text-center">
-        <h1 className="bg-gradient-to-br from-[#EB499D] to-[#8D5CF4] bg-clip-text text-transparent text-8xl font-black">
+      <div className="w-screen text-center h-1/3 flex flex-col justify-center ">
+        <h1 className="bg-gradient-to-br from-[#EB499D] to-[#8D5CF4] bg-clip-text text-transparent text-4xl font-black">
           Verdadero o Falso
         </h1>
-        <p className="text-2xl pt-10">
+        <p className="">
           Tu puntuacion actual es: {score}/{questions.length}
         </p>
       </div>
       {isFinished ? (
-        <div className="h-2/3 flex justify-center items-center">
+        <div className="flex justify-center items-center h-1/3 w-screen">
           {answered ? (
             <Questions
               onClose={handleContestada}
