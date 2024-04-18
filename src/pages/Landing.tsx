@@ -38,9 +38,9 @@ export default function Landing() {
   };
 
   return (
-    <div className="flex flex-col items-center h-screen w-screen bg-[#222] text-white">
+    <div className="flex flex-col items-center h-screen w-screen text-white">
       <div className="w-screen text-center h-1/3 flex flex-col justify-center ">
-        <h1 className="bg-gradient-to-br from-[#EB499D] to-[#8D5CF4] bg-clip-text text-transparent text-4xl font-black">
+        <h1 className="bg-gradient-to-br from-[#EB499D] to-[#8D5CF4] bg-clip-text text-transparent text-8xl font-black">
           Verdadero o Falso
         </h1>
         <p className="">
@@ -48,7 +48,7 @@ export default function Landing() {
         </p>
       </div>
       {isFinished ? (
-        <div className="flex justify-center items-center h-1/3 w-screen">
+        <div className="flex justify-center items-center bg-white bg-opacity-15 w-[700px] h-[300px]">
           {answered ? (
             <Questions
               onClose={handleContestada}

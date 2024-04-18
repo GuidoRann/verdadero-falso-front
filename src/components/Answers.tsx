@@ -14,22 +14,22 @@ export default function Answers({
   onIndexIncrement,
 }: typeProps) {
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-10">
       <div className="">
         {onAnswer ? (
-          <p className="text-2xl font-bold text-center text-green-500">
+          <p className="text-4xl font-bold text-center text-green-500">
             Respuesta correcta
           </p>
         ) : (
-          <p className="text-2xl font-bold text-center text-red-500">
+          <p className="text-4xl font-bold text-center text-red-500">
             Respuesta incorrecta
           </p>
         )}
       </div>
-      <p className="text-base text-center px-5">{onQuestion?.respuesta}</p>
+      <p className="text-xl text-center px-5">{onQuestion?.respuesta}</p>
       <div className="w-screen flex justify-center pt-5">
         <button
-          className="bg-cyan-400 rounded-xl p-3 w-[80%]"
+          className="bg-cyan-600 rounded-xl p-3 hover:bg-cyan-500 font-medium"
           onClick={() => {
             onBack();
             onIndexIncrement();

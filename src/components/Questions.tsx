@@ -40,20 +40,20 @@ export default function Questions({
   };
 
   return (
-    <div className="text-white flex flex-col gap-10 w-screen">
+    <div className="text-white flex flex-col justify-center gap-10">
       <div>
         <p className="text-2xl text-center">{onQuestion?.pregunta}</p>
       </div>
       <div className="flex justify-center gap-3 px-5">
         <button
           onClick={() => handleTrueButton()}
-          className="bg-green-400 rounded-full font-bold h-12 w-1/2"
+          className="bg-green-500 hover:bg-green-400 rounded-full text-lg font-bold h-12 w-28"
         >
           Verdadero
         </button>
         <button
           onClick={() => handleFalseButton()}
-          className="bg-red-400 rounded-full font-bold h-12 w-1/2"
+          className="bg-red-500 hover:bg-red-400 rounded-full text-lg font-bold h-12 w-28"
         >
           Falso
         </button>
