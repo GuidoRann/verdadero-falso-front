@@ -48,7 +48,7 @@ export default function Landing() {
         </p>
       </div>
       {isFinished ? (
-        <div className="flex justify-center items-center bg-white bg-opacity-15 w-[700px] h-[300px]">
+        <div className="flex justify-center items-center w-[700px] h-[300px]">
           {answered ? (
             <Questions
               onClose={handleContestada}

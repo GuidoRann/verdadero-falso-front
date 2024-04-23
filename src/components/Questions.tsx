@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { questionsProps } from "../types/questionsProps";
 
-
 interface typeProps {
   onClose: () => void;
   onResponse: (res: boolean | null) => void;
@@ -22,7 +21,6 @@ export default function Questions({
       setAnswered(answered + 1);
       onResponse(true);
       handleScore();
-
     } else onResponse(false);
 
     onClose();
@@ -33,7 +31,6 @@ export default function Questions({
       setAnswered(answered + 1);
       onResponse(true);
       handleScore();
-      
     } else onResponse(false);
 
     onClose();
@@ -42,20 +39,26 @@ export default function Questions({
   return (
     <div className="text-white flex flex-col justify-center gap-10">
       <div>
-        <p className="text-2xl text-center">{onQuestion?.pregunta}</p>
+        <p className="text-3xl text-center">{onQuestion?.pregunta}</p>
       </div>
-      <div className="flex justify-center gap-3 px-5">
+      <div className="flex justify-center gap-6 px-5">
         <button
           onClick={() => handleTrueButton()}
-          className="bg-green-500 hover:bg-green-400 rounded-full text-lg font-bold h-12 w-28"
+          className="bg-white rounded-full text-lg font-bold h-[120px] w-[120px] flex justify-center items-center border-[15px] border-green-500  hover:animate-tada"
         >
-          Verdadero
-        </button>
+          <img
+            src="/thumbs-up.svg"
+            alt="verdadero"
+          />
+        </button>{" "}
         <button
           onClick={() => handleFalseButton()}
-          className="bg-red-500 hover:bg-red-400 rounded-full text-lg font-bold h-12 w-28"
+          className="bg-white rounded-full text-lg font-bold h-[120px] w-[120px] flex justify-center items-center border-[15px] border-red-500 hover:animate-tada"
         >
-          Falso
+          <img
+            src="/thumbs-down.svg"
+            alt="verdadero"
+          />
         </button>
       </div>
     </div>
