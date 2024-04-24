@@ -39,13 +39,16 @@ export default function Landing() {
 
   return (
     <div className="flex flex-col items-center h-screen w-screen text-white">
-      <div className="w-screen text-center h-1/3 flex flex-col justify-center ">
+      <div className="w-screen text-center h-1/3 flex flex-col items-center gap-14 justify-center ">
         <h1 className="bg-gradient-to-br from-[#EB499D] to-[#8D5CF4] bg-clip-text text-transparent text-8xl font-black">
           Verdadero o Falso
         </h1>
-        <p className="">
-          Tu puntuacion actual es: {score}/{questions.length}
-        </p>
+      </div>
+      <div className="flex flex-col justify-center items-center text-gray-700 bg-white h-32 w-32 rounded-xl">
+        <p className="text-3xl font-semibold tracking-widest">Score</p>
+        <span className="text-6xl font-bold">
+          {score}/{questions.length}
+        </span>
       </div>
       {isFinished ? (
         <div className="flex justify-center items-center w-[700px] h-[300px]">
