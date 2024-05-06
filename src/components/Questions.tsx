@@ -15,7 +15,7 @@ export default function Questions({
   handleScore,
 }: typeProps) {
   const [answered, setAnswered] = useState<number>(0);
-
+ 
   const handleTrueButton = () => {
     if (onQuestion?.validacion === "V") {
       setAnswered(answered + 1);
@@ -35,6 +35,8 @@ export default function Questions({
 
     onClose();
   };
+
+
 
   return (
     <div className="text-white flex flex-col justify-center gap-10">
