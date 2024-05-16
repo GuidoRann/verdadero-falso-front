@@ -45,7 +45,7 @@ export default function NuevasPreguntas() {
       <form onSubmit={(e) => onSubmit(e)}>
         <div className="p-2 ">
           <label htmlFor="nombre" className="p-2">
-            Pregunta
+            Preguntas
           </label>
           <input
             type="text"
