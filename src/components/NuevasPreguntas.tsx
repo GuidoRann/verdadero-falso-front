@@ -23,7 +23,7 @@ export default function NuevasPreguntas() {
     urlImagen: "",
   });
 
-  const { pregunta, respuesta, validacion, categoria, urlImagen } = preguntas;
+  const { pregunta, respuesta, validacion, categoria } = preguntas;
 
   const onImputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -90,28 +90,21 @@ export default function NuevasPreguntas() {
           <label htmlFor="sueldo" className="p-2">
             Categoria
           </label>
-          <input
-            type="text"
+          <select
             className="text-black"
             id="categoria"
-            name="categoria"
             value={categoria}
+            name="categoria"
             onChange={(e) => onImputChange(e)}
-          />
+          >
+            <option value="">-</option>
+            <option value="Naturaleza">Naturaleza</option>
+            <option value="Ciencia">Ciencia</option>
+            <option value="Cine">Cine</option>
+            <option value="Musica">Musica</option>
+          </select>
         </div>
-        <div className="p-2">
-          <label htmlFor="sueldo" className="p-2">
-            urlImg
-          </label>
-          <input
-            type="text"
-            className="text-black"
-            id="urlImagen"
-            name="urlImagen"
-            value={urlImagen}
-            onChange={(e) => onImputChange(e)}
-          />
-        </div>
+       
         <div className="px-20 py-5 flex gap-3">
           <button type="submit" className="p-2 bg-green-400 rounded-xl">
             Agregar

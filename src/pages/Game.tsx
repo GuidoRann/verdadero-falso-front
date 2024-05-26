@@ -3,26 +3,25 @@ import Questions from "../components/Questions";
 import Answers from "../components/Answers";
 import HandleQuestions from "../utils/HandleQuestions";
 import Finished from "../components/Finished";
-
+import useStore from "../utils/Store";
 
 interface propsTypes {
-  category: string;
-  questionsNumber: number;
   restart: () => void;
 }
 
-
-export default function Landing( { category, questionsNumber, restart } : propsTypes ) {
+export default function Landing({ restart }: propsTypes) {
   const [answered, setAnswered] = useState<boolean>(true);
   const [correct, setCorrect] = useState<boolean | null>(null);
   const [indexQuestion, setIndexQuestion] = useState<number>(0);
   const [isFinished, setIsFinished] = useState<boolean>(true);
   const [score, setScore] = useState<number>(0);
 
+  const { selectedCategory, selectedAmount } = useStore();
 
-  const { questions } = HandleQuestions({ category, questionsNumber });
+  const { questions } = HandleQuestions({ selectedCategory, selectedAmount });
 
-  console.log(questions);
+  console.log("cantidad", selectedAmount);
+  console.log("categoria", selectedCategory);
 
   const actualQuestion = questions[indexQuestion];
 

@@ -2,25 +2,39 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { questionsProps } from "../types/questionsProps";
 
-interface propsTypes {
-  category: string;
-  questionsNumber: number;
-}
+type props = {
+  selectedCategory?: string;
+  selectedAmount?: number;
+};
 
-export default function HandleQuestions({ category, questionsNumber }: propsTypes) {
-  const baseURL = "http://localhost:8080/preguntas";
+export default function HandleQuestions({
+  selectedCategory = "",
+  selectedAmount = 3,
+}: props) {
+  const baseURL = "http://localhost:8080";
   const [questions, setQuestions] = useState<questionsProps[]>([]);
+  let url = "";
+  if (selectedCategory === "Random") {
+    url = `${baseURL}/preguntas`;
+  } else url = `${baseURL}/preguntasFiltradas?categoria=${selectedCategory}`;
 
-  const saveQuestions = async (category: string, questionsNumber: number) => {
-    const results = await axios.get<questionsProps[]>(
-      `${baseURL}?category=${category}&limit=${questionsNumber}`
-    );
-    setQuestions(results.data);
+  console.log(url);
+  const saveQuestions = async () => {
+    if (!selectedCategory) return;
+
+    try {
+      const results = await axios.get<questionsProps[]>(url);
+      setQuestions(results.data);
+    } catch (error) {
+      console.error("Ha ocurrido un error: ", error);
+    }
   };
 
   useEffect(() => {
-    saveQuestions(category, questionsNumber);
+    saveQuestions();
   }, []);
 
-  return { questions };
+  const filteredQuestions = questions.slice(0, selectedAmount);
+
+  return { questions: filteredQuestions };
 }
