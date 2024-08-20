@@ -15,7 +15,7 @@ export default function Questions({
   handleScore,
 }: typeProps) {
   const [answered, setAnswered] = useState<number>(0);
- 
+
   const handleTrueButton = () => {
     if (onQuestion?.validacion === "V") {
       setAnswered(answered + 1);
@@ -36,8 +36,6 @@ export default function Questions({
     onClose();
   };
 
-
-
   return (
     <div className="text-white flex flex-col justify-center gap-10">
       <div>
@@ -48,19 +46,13 @@ export default function Questions({
           onClick={() => handleTrueButton()}
           className="bg-white rounded-full text-lg font-bold h-[120px] w-[120px] flex justify-center items-center border-[15px] border-green-500  hover:animate-tada"
         >
-          <img
-            src="/thumbs-up.svg"
-            alt="verdadero"
-          />
+          <img src="/thumbs-up.svg" alt="verdadero" />
         </button>{" "}
         <button
           onClick={() => handleFalseButton()}
           className="bg-white rounded-full text-lg font-bold h-[120px] w-[120px] flex justify-center items-center border-[15px] border-red-500 hover:animate-tada"
         >
-          <img
-            src="/thumbs-down.svg"
-            alt="verdadero"
-          />
+          <img src="/thumbs-down.svg" alt="verdadero" />
         </button>
       </div>
     </div>

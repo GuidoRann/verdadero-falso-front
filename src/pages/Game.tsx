@@ -20,9 +20,6 @@ export default function Landing({ restart }: propsTypes) {
 
   const { questions } = HandleQuestions({ selectedCategory, selectedAmount });
 
-  console.log("cantidad", selectedAmount);
-  console.log("categoria", selectedCategory);
-
   const actualQuestion = questions[indexQuestion];
 
   const handleChangeIndex = () => {

@@ -17,19 +17,19 @@ export default function Answers({
     <div className="flex flex-col gap-10">
       <div className="">
         {onAnswer ? (
-          <p className="text-4xl font-bold text-center text-green-500">
+          <p className="text-5xl font-bold text-center text-green-500">
             Respuesta correcta
           </p>
         ) : (
-          <p className="text-4xl font-bold text-center text-red-500">
+          <p className="text-5xl font-bold text-center text-red-500">
             Respuesta incorrecta
           </p>
         )}
       </div>
-      <p className="text-xl text-center px-5">{onQuestion?.respuesta}</p>
+      <p className="text-2xl text-center px-5">{onQuestion?.respuesta}</p>
       <div className="w-screen flex justify-center pt-5">
         <button
-          className="bg-cyan-600 rounded-xl p-3 hover:bg-cyan-500 font-medium"
+          className="hover:bg-purple-400 bg-purple-600 text-white px-3 py-3 rounded-lg font-bold"
           onClick={() => {
             onBack();
             onIndexIncrement();
