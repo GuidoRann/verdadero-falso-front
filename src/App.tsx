@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
-import CrearPregunta from "./components/NuevasPreguntas";
+// import CrearPregunta from "./components/NuevasPreguntas";
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/crearPregunta" element={<CrearPregunta />} />
+          {/* <Route path="/crearPregunta" element={<CrearPregunta />} /> */}
         </Routes>
       </BrowserRouter>
     </>
