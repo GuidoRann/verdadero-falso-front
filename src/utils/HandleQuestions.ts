@@ -11,7 +11,7 @@ export default function HandleQuestions({
   selectedCategory = "",
   selectedAmount = 3,
 }: props) {
-  const baseURL = "http://localhost:8080";
+  const baseURL = "https://verdadero-falso.up.railway.app";
   const [questions, setQuestions] = useState<questionsProps[]>([]);
   let url = "";
   if (selectedCategory === "Random") {
